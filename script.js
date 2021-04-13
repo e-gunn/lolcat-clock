@@ -5,16 +5,16 @@ var lunchTime = 12; // 12PM
 var partyTime = 17; // 5PM
 var napTime = lunchTime + 2; // 2PM
 var time = new Date().getHours();
-var partyTimeButton = document.getElementById("partyTimeButton");
-var napTimeSelector = document.getElementById("napTimeSelector");
-var lunchTimeSelector = document.getElementById("lunchTimeSelector");
-var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
+var partyTimeButton = document.querySelector("#partyTimeButton");
+var napTimeSelector = document.querySelector("#napTimeSelector");
+var lunchTimeSelector = document.querySelector("#lunchTimeSelector");
+var wakeUpTimeSelector = document.querySelector("#wakeUpTimeSelector");
 var isPartyTime = false;
 
 var updateClock = function () {
 
-	var message = document.getElementById('timeEvent');
-	var lolcat = document.getElementById('lolcat');
+	var message = document.querySelector('#timeEvent');
+	var lolcat = document.querySelector('#lolcat');
 	var messageText;
 	var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat5.jpg";
 
@@ -46,7 +46,7 @@ var updateClock = function () {
 
 var showCurrentTime = function() {
     // display the string on the webpage
-    var clock = document.getElementById('clock');
+    var clock = document.querySelector('#clock');
 
     var currentTime = new Date();
 
