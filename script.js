@@ -1,22 +1,22 @@
-var noon = 12;
-var evening = 18; // 6PM
-var wakeupTime = 9; // 9AM
-var lunchTime = 12; // 12PM
-var partyTime = 17; // 5PM
-var napTime = lunchTime + 2; // 2PM
-var time = new Date().getHours();
-var partyTimeButton = document.querySelector("#partyTimeButton");
-var napTimeSelector = document.querySelector("#napTimeSelector");
-var lunchTimeSelector = document.querySelector("#lunchTimeSelector");
-var wakeUpTimeSelector = document.querySelector("#wakeUpTimeSelector");
-var isPartyTime = false;
+const noon = 12;
+const evening = 18; // 6PM
+const wakeupTime = 9; // 9AM
+const lunchTime = 12; // 12PM
+const partyTime = 17; // 5PM
+const napTime = lunchTime + 2; // 2PM
+const time = new Date().getHours();
+const partyTimeButton = document.querySelector("#partyTimeButton");
+const napTimeSelector = document.querySelector("#napTimeSelector");
+const lunchTimeSelector = document.querySelector("#lunchTimeSelector");
+const wakeUpTimeSelector = document.querySelector("#wakeUpTimeSelector");
+let isPartyTime = false;
 
-var updateClock = function () {
+const updateClock = function () {
 
-	var message = document.querySelector('#timeEvent');
-	var lolcat = document.querySelector('#lolcat');
-	var messageText;
-	var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat5.jpg";
+	const message = document.querySelector('#timeEvent');
+	const lolcat = document.querySelector('#lolcat');
+	let messageText;
+	let image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat5.jpg";
 
 	if (time == partyTime){
 		image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat4.jpg";
@@ -44,16 +44,16 @@ var updateClock = function () {
 	message.innerText = messageText;
 	lolcat.src = image;
 
-var showCurrentTime = function() {
+const showCurrentTime = function() {
     // display the string on the webpage
-    var clock = document.querySelector('#clock');
+    let clock = document.querySelector('#clock');
 
-    var currentTime = new Date();
+    let currentTime = new Date();
 
-    var hours = currentTime.getHours();
-    var minutes = currentTime.getMinutes();
-    var seconds = currentTime.getSeconds();
-    var meridian = "AM";
+    let hours = currentTime.getHours();
+    let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
+    let meridian = "AM";
 
     // Set hours
     if (hours >= noon)
@@ -78,7 +78,7 @@ var showCurrentTime = function() {
     }
 
     // put together the string that displays the time
-    var clockTime = hours + ":" + minutes + ":" + seconds + " " + meridian + "!";
+    const clockTime = hours + ":" + minutes + ":" + seconds + " " + meridian + "!";
 
     clock.innerText = clockTime;
 };
@@ -89,11 +89,11 @@ showCurrentTime();
 
 updateClock();
 
-var oneSecond = 1000;
+const oneSecond = 1000;
 
 setInterval(updateClock, oneSecond);
 
-var partyEvent = function() {
+const partyEvent = function() {
 
    if (isPartyTime === false) {
       isPartyTime = true;
@@ -108,13 +108,13 @@ var partyEvent = function() {
    }
 };
 
-var lunchEvent = function() {
+const lunchEvent = function() {
 		lunchTime = lunchTimeSelector.value;
 	};
-	var wakeUpEvent = function() {
+const wakeUpEvent = function() {
 		wakeupTime = wakeUpTimeSelector.value;
 	};
-	var napEvent = function() {
+const napEvent = function() {
 		napTime = napTimeSelector.value;
 	};
 
